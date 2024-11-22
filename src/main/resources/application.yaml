@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: WebApp
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/web_test?createDatabaseIfNotExist=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+
+  app:
+    jwtSecret: 217ec2b9e8eaf74cca22b75c75e05e05308fdad984078bc15a5da65182edafda
+    jwtExpirationMs: 3600000
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: xxxxxx@gmail.com
+    password: xxxx xxxx xxxx xxxx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  servlet:
+    multipart:
+      enabled: true
+      location: /FileUploadLocation....
+      max-file-size: 20MB
+      max-request-size: 20MB
+#logging:
+#  level:
+#    org:
+#      springframework: DEBUG
+#    hibernate: DEBUG
+#file:
+#    upload-dr: src\main\resources\static\uploads\
